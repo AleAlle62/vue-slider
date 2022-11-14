@@ -18,27 +18,47 @@
 <body>
     <!-- collegamento a vue -->
     <div id="root"> 
-        
         <div class="sliders">
             <!-- sinistra -->
             <div class="left-slider">
-                <div class="info">
-                    <!-- titolo e sottotitolo -->
-                    <h2 class="title"></h2>
-                    <span class="text"></span>
-                </div>
+                <!-- ciclo per il quale cambia l'immagine grande -->
+                <div v-for= "( obj , i ) in arrImages">
+
+
+                    <!-- titolo  -->
+                    <h2>{{ obj.title }}</h2>
+                    <!-- sottotitolo  -->
+                    <p>{{ obj.text }}</p>
+
+
+
+                    <!-- ricerca delle immagini per ciclo -->
+                    <img :src= "obj.image"  class= "immagine-grande" :class= "i === activeIndex ? 'active': '' ">
+                    <!-- scrittura del testo e del sottotilo in base all'immagine  -->
+					<div class= " text-top " :class= " i === activeIndex ? 'testo-immagine-grande' :'' ">
+                        
+					</div>
+				</div>
+            </div>
+            
+            <!-- fine della parte sinistra  -->
+            
+            <!-- grazie dei bottoni  -->
+            
+            <div class="buttons">
+                <i @click ='activeIndex--' class="bi bi-caret-up-square-fill"></i>
+                <i @click ='activeIndex++' class="bi bi-caret-down-square-fill"></i>
             </div>
             <!-- destra immagini piccole -->
             <div class="right-slider">
-                <!-- bottoni -->
-                <div class="buttons">
-                    <i id="up-button" class="bi bi-caret-up-square-fill"></i>
-                    <i id="down-button" class="bi bi-caret-down-square-fill"></i>
-                </div>
+                <!-- controlli                 -->
+                <div class="controls"></div>
+                <!-- scorrimento immagini con ciclo  -->
+				<img v-for= "(obj , i) in arrImages" :src= "obj.image" alt="obj.title" class=" thumb-img " :class= " i === activeIndex ? 'active' : '' ">	
             </div>
         </div>
-        
+        <!-- fine slider  -->  
     </div>
+    <!-- fine root  -->
 </body>
 </html>
-
