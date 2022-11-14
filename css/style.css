@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	background-image: url('https://cdn.sforum.vn/sforum/wp-content/uploads/2022/09/ps-thumb.jpg');
+	background-position: center;
+	background-color: #FFFFFF44; backdrop-filter: blur(8px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+img {
+	object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.sliders{
+    width: 800px;
+    height: 400px;
+    display: flex;
+    padding: 1rem;
+}
+
+.left-slider{
+	position: relative;
+    height: 100%;
+    width: 80%;
+}
+
+.right-slider{
+    position: relative;
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+	color: white;
+	font-size: 2em;
+}
+
+
+.left-slider-img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    visibility: hidden;
+}
+
+.right-slider-img{
+	height: 74px;
+}
+
+.active{
+    visibility: visible;
+}
+
+.selected{
+    border: 3px solid fuchsia;
+}
+
+
+.info{
+    position: absolute;
+    top: 140px;
+    z-index: 100;
+    color: white;
+    text-align: center;
+}
+
+
