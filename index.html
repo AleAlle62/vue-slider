@@ -24,7 +24,10 @@
                 <!-- ciclo per il quale cambia l'immagine grande -->
                 <div v-for= "( obj , i ) in arrImages">
                     <!-- ricerca delle immagini per ciclo -->
-                    <img :src= "obj.image"  class= "immagine-grande" :class= "i === activeIndex ? 'active': '' ">
+                    <img :src= "obj.image"  
+                    class= "immagine-grande" 
+                    :class= "i === activeIndex ? 'active': '' ">
+                    
                     <!-- scrittura del testo e del sottotilo in base all'immagine  -->
 					<div class= " testo " :class= " i === activeIndex ? 'testo-immagine-grande' :'' ">
                         <!-- titolo  -->                       
@@ -38,15 +41,21 @@
             
             <!-- bottoni  -->        
             <div class="buttons">
-                <i @click =' activeIndex -- ' class="bi bi-caret-up-square-fill"></i>
-                <i @click =' activeIndex ++ ' class="bi bi-caret-down-square-fill"></i>
+                <!-- funzione che prende i methods da vue  -->
+                <i @click = cambiaSlide(1)  class="bi bi-caret-up-square-fill"></i>
+                <i @click = cambiaSlide(0)  class="bi bi-caret-down-square-fill"></i>
             </div>
             <!-- destra immagini piccole -->
             <div class="right-slider">
                 <!-- controlli                 -->
                 <div class="controls"></div>
-                <!-- scorrimento immagini con ciclo  -->
-				<img v-for= "(obj , i) in arrImages" :src= "obj.image" alt="obj.title" class=" thumb-img " :class= " i === activeIndex ? 'active' : '' ">	
+                <!-- scorrimento immagini con ciclo, al click apre l'immagine selezionata  -->
+				<img v-for= "(obj , i) in arrImages" 
+                :src= "obj.image" 
+                alt="obj.title" 
+                class=" thumb-img " 
+                :class= " i === activeIndex ? 'active' : '' "
+                @click="activeIndex = i">
             </div>
         </div>
         <!-- fine slider  -->  
