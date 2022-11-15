@@ -89,6 +89,21 @@ img {
 h2 {
     position: absolute;
     color: white;
+    bottom: 50px;
+}
+
+.testo {
+    position: absolute;
+	bottom:20px;
+	right:0;
+	text-align: right;
+	display: none;
+	object-position: center;
+}
+
+.testo-immagine-grande {
+    display: block;
+    color: white;
 }
 
 

@@ -23,31 +23,23 @@
             <div class="left-slider">
                 <!-- ciclo per il quale cambia l'immagine grande -->
                 <div v-for= "( obj , i ) in arrImages">
-
-
-                    <!-- titolo  -->
-                    <h2>{{ obj.title }}</h2>
-                    <!-- sottotitolo  -->
-                    <p>{{ obj.text }}</p>
-
-
-
                     <!-- ricerca delle immagini per ciclo -->
                     <img :src= "obj.image"  class= "immagine-grande" :class= "i === activeIndex ? 'active': '' ">
                     <!-- scrittura del testo e del sottotilo in base all'immagine  -->
-					<div class= " text-top " :class= " i === activeIndex ? 'testo-immagine-grande' :'' ">
-                        
+					<div class= " testo " :class= " i === activeIndex ? 'testo-immagine-grande' :'' ">
+                        <!-- titolo  -->                       
+                        <h2>{{ obj.title }}</h2>
+                        <!-- sottotitolo  -->
+                        <p>{{ obj.text }}</p>                        
 					</div>
 				</div>
             </div>
-            
             <!-- fine della parte sinistra  -->
             
-            <!-- grazie dei bottoni  -->
-            
+            <!-- bottoni  -->        
             <div class="buttons">
-                <i @click ='activeIndex--' class="bi bi-caret-up-square-fill"></i>
-                <i @click ='activeIndex++' class="bi bi-caret-down-square-fill"></i>
+                <i @click =' activeIndex -- ' class="bi bi-caret-up-square-fill"></i>
+                <i @click =' activeIndex ++ ' class="bi bi-caret-down-square-fill"></i>
             </div>
             <!-- destra immagini piccole -->
             <div class="right-slider">
